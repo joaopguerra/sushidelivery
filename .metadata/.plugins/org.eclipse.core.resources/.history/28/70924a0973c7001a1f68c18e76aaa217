@@ -1,0 +1,5 @@
+package com.sushidelivery.app.repositories;
+
+public interface PedidoRepository extends JPAR {
+
+}

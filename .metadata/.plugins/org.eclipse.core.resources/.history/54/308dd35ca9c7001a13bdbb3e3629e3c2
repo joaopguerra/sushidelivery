@@ -1,0 +1,35 @@
+package com.sushidelivery.app;
+
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.sushidelivery.app.entities.Pedido;
+import com.sushidelivery.app.repositories.PedidoRepository;
+
+@SpringBootApplication
+public class SushideliveryApplication implements CommandLineRunner {
+	
+	@Autowired
+	private PedidoRepository pedidoRepository;
+
+	public static void main(String[] args) {
+		SpringApplication.run(SushideliveryApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		
+		
+		
+		Pedido p1 = new Pedido()
+		
+		pedidoRepository.saveAll(Arrays.asList(p1, p2, p3));
+		
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.sushidelivery.app.entities;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Produto {
+	
+	private Integer id;
+	
+
+}

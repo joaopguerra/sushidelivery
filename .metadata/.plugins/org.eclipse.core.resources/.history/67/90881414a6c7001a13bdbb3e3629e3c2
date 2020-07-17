@@ -1,0 +1,5 @@
+package com.sushidelivery.app.entities;
+
+public class Produto {
+
+}

@@ -1,0 +1,27 @@
+package com.sushidelivery.app;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.sushidelivery.app.repositories.PedidoRepository;
+
+@SpringBootApplication
+public class SushideliveryApplication implements CommandLineRunner {
+	
+	@Autowired
+	private PedidoRepository pedidoRepository;
+
+	public static void main(String[] args) {
+		SpringApplication.run(SushideliveryApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		
+		
+		
+	}
+
+}

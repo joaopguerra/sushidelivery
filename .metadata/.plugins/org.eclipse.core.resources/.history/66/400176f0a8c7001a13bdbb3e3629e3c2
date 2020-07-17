@@ -1,0 +1,22 @@
+package com.sushidelivery.app.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.sushidelivery.app.entities.Pedido;
+import com.sushidelivery.app.repositories.PedidoRepository;
+
+@Service
+public class PedidoService {
+	
+	@Autowired
+	private PedidoRepository repo;
+	
+	public List<Pedido> buscar () {
+		List<Pedido> obj = repo.findAll();
+		return obj;
+	}
+
+}
