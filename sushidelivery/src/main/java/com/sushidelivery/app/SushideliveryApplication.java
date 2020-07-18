@@ -7,8 +7,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.sushidelivery.app.entities.Cliente;
+import com.sushidelivery.app.entities.Motoqueiro;
 import com.sushidelivery.app.entities.Pedido;
 import com.sushidelivery.app.entities.Produto;
+import com.sushidelivery.app.repositories.ClienteRepository;
+import com.sushidelivery.app.repositories.MotoqueiroRepository;
 import com.sushidelivery.app.repositories.PedidoRepository;
 import com.sushidelivery.app.repositories.ProdutoRepository;
 
@@ -20,12 +24,17 @@ public class SushideliveryApplication implements CommandLineRunner {
 	
 	@Autowired
 	private ProdutoRepository produtoRepository;
+	
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	@Autowired
+	private MotoqueiroRepository motoqueiroRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SushideliveryApplication.class, args);
 	}
 
-	@Override
 	public void run(String... args) throws Exception {
 		
 		Produto prod1 = new Produto(null, "Sushi hot, 16pcs", 25.00);
@@ -41,7 +50,14 @@ public class SushideliveryApplication implements CommandLineRunner {
 		
 		pedidoRepository.saveAll(Arrays.asList(p1, p2, p3, p4));
 		
+		Cliente c1 = new Cliente("85 9999-1010", "João", "Rua Vicente Spíndola", "Nº10000","Vila União","Fortaleza","CE");
+		Cliente c2 = new Cliente("85 9999-8888", "Maria", "Rua Mario Mamede", "Nº1200","Fátima","Fortaleza","CE");
 		
+		clienteRepository.saveAll(Arrays.asList(c1,c2));
+		
+		Motoqueiro m1 = new Motoqueiro(null,"Fábio","8888-3344");
+		
+		motoqueiroRepository.saveAll(Arrays.asList(m1));
 	}
 
 }
